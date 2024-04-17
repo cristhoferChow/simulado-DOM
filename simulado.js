@@ -1,11 +1,11 @@
 function ex1(){
+    /*Não preciso criar var para pegar o elemento direto do html */
     document.querySelectorAll("div p").forEach(p => {
         p.style.color ="pink";
     })
 }
 
 function ex2(){
-    const nomes = [{nome:"teste1", acao:"mostrar"},{nome:"teste2", acao:"mostrar"},{nome:"teste3", acao:"mostrar"},{nome:"teste4", acao:"ignorar"}];
     let mostrar = 0;
     let ignorar = 0;
     let divI = document.createElement("div");
@@ -28,4 +28,30 @@ function ex2(){
 
     }
 }
+
+function rolar() {
+    let numero = parseInt(document.getElementById("numero").value);
+    let ul = document.createElement("ul");
+    ul.className = "lista";
+
+    for (let i = 0; i < numero; i++) {
+        let li = document.createElement("li");
+        li.textContent = i;
+        li.style.color = i % 2 === 0 ? "blue" : "red";
+        ul.appendChild(li);
+    }
+
+    document.body.appendChild(ul);
+}
+
+
+function nomearImgs() {
+    document.querySelectorAll("img").forEach((img,i) =>{
+        img.src = "image" + i + ".png"
+
+    });
+}
+
+
+
 
